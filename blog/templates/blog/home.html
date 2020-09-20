@@ -1,0 +1,22 @@
+{% extends "blog/index.html" %} {% block content %}
+<h1>Welcome to Home Page</h1>
+{% for post in posts %}
+<div>
+    <h2>Applicant name : {{ post.name}}
+        <h4> Holds ID no : {{ post.id}}</h4>
+    </h2>
+    <h4>He lives in {{ post.place }}</h4>
+    <p>He has some knowledge in {{ post.qualification}} programming languages.</p>
+    <small class="text-muted">
+        {{ post.date_posted|date:'F d, Y' }}
+    </small>
+</div>
+{% endfor %}
+<form action="add" method="POST">
+    {% csrf_token %}
+
+    <input type="text" name="num1"> +
+    <input type="text" name="num2">
+    <input type="submit">
+</form>
+{% endblock content %}

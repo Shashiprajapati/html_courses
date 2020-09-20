@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Django project-2</title>
+    <meta charset="UTF-8" />
+    <meta name="Django-Project" content="learn to build project" />
+    <meta name="viewport" content="width=device-width initial-scale=1.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link href="http://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet" integrity="sha384-fnm)OCqbTlwIlj8LyTjo7mOU
+        StjsKC4pOpQbqyi7RrhN7udipRwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans">
+    <link rel="stylesheet" href="{% static 'blog/style.css' %}">
+
+</head>
+
+<body>
+
+    <div class="container">
+        <form>
+            <div class="row">
+                <div class="col-xs-12">
+
+                    <ul class="nav nav-pills nav-justified" style="background-color:moccasin;">
+                        <!-- "nav flex-column"  to get nav in column-->
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{% url 'blog-home' %}">
+                                <span><i class="fas fa-home" ></i></span>Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'blog-about' %}">
+                                <span class="glyphicon glyphicon-phone-alt"></span>About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <span class="glyphicon glyphicon-info-sign"></span>Contacts
+                            </a>
+
+                            <ul class="dropdown-menu">
+                                <li><a href="{% url 'blog-home' %}">Home</a></li>
+                                <li><a href="{% url 'blog-about' %}">About</a></li>
+                                <li><a href="#">Contacts</a></li>
+                                <li><a href="#">Products</a></li>
+
+                            </ul>
+                        </li>
+                    </ul>
+                    <br>
+                </div>
+        </form>
+        </div>
+
+        <div>
+            {% block content %}{% endblock content%}
+        </div>
+
+</body>
+
+</html>
